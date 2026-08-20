@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Customers</h2>
+
+{% if customers %}
+<table class="table table-striped">
+    <thead>
+        <tr><th>ID</th><th>Name</th><th>Address</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.id }}</td>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.address }}</td>
+            <td>
+                <form method="post" action="{{ url_for('views.delete_customer', customer_id=customer.id) }}">
+                    <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No customers yet. <a href="{{ url_for('views.add_customer') }}">Add one</a>.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add Customer</h2>
+
+<form method="post" action="{{ url_for('views.add_customer') }}">
+    <div class="mb-3">
+        <label class="form-label" for="name">Name</label>
+        <input class="form-control" type="text" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="address">Address</label>
+        <input class="form-control" type="text" id="address" name="address" required>
+    </div>
+    <button class="btn btn-primary" type="submit">Save</button>
+</form>
+{% endblock %}

@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+Python_31-Aug-2026 - 04-Sep-2026.pdf
+Python_topics.md
